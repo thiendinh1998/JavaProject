@@ -7,8 +7,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 /**
- * author Dinh Tran
  * class : quản lí đọc đầu vào
+ * author Dinh Tran
  */
 public class IOFile {
 
