@@ -6,26 +6,23 @@ import Model.TuVung;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
 /**
- * class : đại diện cho các phương thức vào ra file excel 
  * author Dinh Tran
  */
 public class IOFile {
 
     /**
      * lấy tên chủ đề nạp vào dữ liệu
-     *
-     * @param data
      */
+    public final static String path = "Data\\";
     public static void inputChuDe(DuLieu data) {
-        File file = new File("listTopic.txt");
+        File file = new File(path + "listTopic.txt");
         try {
             Scanner sc = new Scanner(file);
             while (sc.hasNext()) {
                 ChuDe temp = new ChuDe();
                 temp.setTenChuDe(sc.nextLine());
-                temp.setLinkFile(sc.nextLine());
+                temp.setLinkFile(path + sc.nextLine());
                 data.addChuDe(temp);
             }
         } catch (FileNotFoundException e) {
@@ -49,7 +46,7 @@ public class IOFile {
                     temp.setPhienAm(sc.nextLine());
                     temp.setTuLoai(sc.nextLine());
                     temp.setNghia(sc.nextLine());
-                    temp.setLinkImage(sc.nextLine());
+                    temp.setLinkImage(path + "image\\" + sc.nextLine());
                     data.getDanhSachChuDe().get(i).addTu(temp);
                 }
             } catch (FileNotFoundException e) {
